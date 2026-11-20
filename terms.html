@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Xero integration terms of use</title><link rel="stylesheet" href="styles.css"></head><body><main><nav><a href="index.html">Overview</a><a href="integration.html">Integration</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><h1>Xero integration terms of use</h1>
+<h2>Authorized private use</h2>
+<p>This integration is for Monica Ferguson's authorized use with her own Xero organisation. No other person may use it or attempt to connect an organisation they are not authorized to administer.</p>
+<h2>Initial function</h2>
+<p>The initial function is limited to Xero authorization, temporary in-memory processing of identity, token, and connection metadata, confirmation of exact granted scopes and one organisation connection, deletion of that exact connection when Xero returns HTTP 204, and database-enforced append-only security-event logging. Xero's HTTP 204 response documents that Xero has deleted the connection; the integration makes no separate post-deletion <code>GET /connections</code> readback. It calls no Accounting API endpoint during the initial connection.</p>
+<p>The integration does not provide bookkeeping, accounting, tax, legal, or financial advice.</p>
+<h2>User responsibilities</h2>
+<p>The user must protect the device, macOS account, Xero account, and authentication factors; review requested scopes before granting access; stop if anything is unexpected; and report suspected security issues promptly to <code>monica@monicaferguson.me</code>.</p>
+<h2>Availability and platform terms</h2>
+<p>The integration may be suspended or changed for security, compliance, maintenance, or Xero platform changes. Future accounting-data access or broader use requires separate authorization and may require revised terms and privacy information.</p>
+<p>Xero is a third-party service governed by Xero's own terms. These terms do not alter the user's agreement with Xero.</p>
+<p>To the extent permitted by applicable law, this private tool is provided without a promise of uninterrupted availability. The user remains responsible for reviewing source accounting records and obtaining professional advice where needed. Nothing in these terms excludes rights or liability that cannot legally be excluded.</p>
+<h2>Ending use</h2>
+<p>Use may be ended at any time by stopping the local tool and requesting removal of the Xero connection. If Xero does not accept the deletion request, the flow fails and deletion remains unconfirmed, so the connection may remain. Deleting the connection does not revoke the access token, which may remain valid until expiry, which is up to 30 minutes. Security evidence remains subject to the privacy notice's chain-retention and hold rules.</p>
+<p>Contact: <code>monica@monicaferguson.me</code></p><footer>Public disclosure copy version 2026-11-19-v4 · Contact: monica@monicaferguson.me</footer></main></body></html>

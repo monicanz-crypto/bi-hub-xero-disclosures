@@ -1,0 +1,38 @@
+{
+  "files": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "index.html": {
+      "bytes": 1005,
+      "sha256": "14052fb04d22157043036fd27024b13f29e30fccb920afdb02d6f107a2c2f920"
+    },
+    "integration.html": {
+      "bytes": 2685,
+      "sha256": "a69e00ab3bad1674b11fffda8a4f96712ac248484700f8fa46eb0702ef91276c"
+    },
+    "privacy.html": {
+      "bytes": 4032,
+      "sha256": "c1a63b9d6ead9be012ab982c0997abe89e7f7264011747555a0e27ba7be21387"
+    },
+    "robots.txt": {
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    "styles.css": {
+      "bytes": 1000,
+      "sha256": "5400cbd7fed71cd12344eb6fe5c430c6eeeff8d558202e1163eede63b41ad357"
+    },
+    "terms.html": {
+      "bytes": 3058,
+      "sha256": "8ad73b6fd06be9c8ff19a9c4faef23835f942e1ebdfbb0589c953b7e66b9b9ef"
+    }
+  },
+  "packageVersion": "2026-11-19-v4",
+  "sourceSha256": {
+    "integration.md": "43776a97e5b8579dcdf35531ac89a0984254e142a34ca9a6757cc02b2565873f",
+    "privacy.md": "9fad5bbce2f3da41aa9600d08dc5350acb738c785fa96b352091b6cbad098d20",
+    "terms.md": "aebefbf164f17002ce307034572a5488dfc8bebb414311b86e6bc6c18e5e59ac"
+  }
+}

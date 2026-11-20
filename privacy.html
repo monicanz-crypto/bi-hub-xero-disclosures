@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Xero integration privacy notice</title><link rel="stylesheet" href="styles.css"></head><body><main><nav><a href="index.html">Overview</a><a href="integration.html">Integration</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav><h1>Xero integration privacy notice</h1>
+<h2>Operator and purpose</h2>
+<p>This private integration is operated by Monica Ferguson for her own business administration. Monica is the only intended user.</p>
+<h2>Information processed</h2>
+<p>During the one-shot connection process, the integration temporarily processes in memory:</p>
+<ul>
+<li>the OAuth authorization response, authorization code, access token, and ID token;</li>
+<li>identity claims associated with the <code>openid</code>, <code>profile</code>, and <code>email</code> permissions;</li>
+<li>the granted scope list;</li>
+<li>connection metadata returned by <code>GET /connections</code>, including the tenant type and the tenant and connection identifiers required to validate the organisation and request deletion of the exact connection; and</li>
+<li>provider status and error information required to fail safely.</li>
+</ul>
+<p>The minimized result contains only status, tenant type, exact granted scopes, and <code>accountingDataRead: false</code>. It does not output a raw or hashed tenant identifier. No Accounting API endpoint is called in the initial flow. <code>accounting.settings.read</code> is a permission, not evidence that an Accounting API endpoint was called.</p>
+<h2>Storage, security, and retention</h2>
+<p>App credentials and the dedicated database logger credential are stored in macOS Keychain. The database security-event log contains only a fixed, data-free event taxonomy and never contains OAuth tokens, ID tokens, identity claims, authorization codes, callback URLs, provider URLs, tenant or connection identifiers, tenant or organisation names, connection metadata, provider payloads, accounting data, personal data, or provider error text.</p>
+<p>The private Hub database assigns each timestamp and sequence, maintains a separate head and HMAC-SHA-256 chain, and permits the dedicated logger credential to execute only the exact append routine. That credential cannot select, insert, update, delete, or truncate the underlying tables. The design does not claim administrator-resistant WORM storage: a Supabase project owner or database administrator can ultimately override database controls.</p>
+<p>The security-event chain is retained for at least 400 days after its maximum server-assigned event timestamp. There is no application delete route or automatic retirement. An incident, legal hold, investigation, or unresolved anomaly extends retention. Selected rows are never deleted or rewritten; any eventual whole-chain retirement requires a separately controlled database change.</p>
+<p>The integration requests deletion of the exact Xero connection after validating the inventory. A successful request returns HTTP 204, which documents that Xero has deleted the connection; there is no separate post-deletion <code>GET /connections</code> readback. If the deletion request is not accepted, the flow fails and deletion remains unconfirmed, so the connection may remain. Connection deletion is not token revocation, and the unpersisted access token may remain valid until expiry, which is up to 30 minutes.</p>
+<p>The integration does not sell personal information or Xero data and does not share Xero data with advertisers or data brokers.</p>
+<h2>Contact and changes</h2>
+<p>Questions or requests may be sent to <code>monica@monicaferguson.me</code>. This notice will be updated before materially different processing begins, including Accounting API reads or use by another person.</p><footer>Public disclosure copy version 2026-11-19-v4 · Contact: monica@monicaferguson.me</footer></main></body></html>
